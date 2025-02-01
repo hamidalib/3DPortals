@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter Tight", serif;
+  font-family: "Inter Tight", serif;
+}
+
+body {
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "Inter Tight", serif;
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1c1c1c;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar button {
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: #13b3a300;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 6px;
+  color: color(srgb red green blue);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0);
+  gap: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar button svg {
+  width: 24px;
+}
+
+.sidebar button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.sidebar button.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffa600;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar .logo {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.sidebar .moduleWrap {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.signOutWrap {
+  /* background-color: red; */
+  width: 100%;
+}
+.signOutWrap .button {
+  width: 100%;
+  display: flex;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgba(255, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  gap: 10px;
+  font-weight: bold;
+  border: 0px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+  font-weight: 700;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 0, 0, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 0, 0, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.mainContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainContent .header {
+  width: 100%;
+  height: 80px;
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+}
+
+.mainContent .content {
+  /* background-color: red; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 24px;
+  padding: 16px;
+  width: 100%;
+}
+
+#studentDataModule h3 {
+  margin-bottom: 8px;
+}
+
+#studentForm {
+  /* background-color: yellow; */
+  padding-bottom: 16px;
+  border-bottom: 1px solid #acacac;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#studentForm .firstRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#studentForm .secondRow {
+  width: 100%;
+  /* background-color: red; */
+  position: relative;
+  height: 42px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+#studentForm .secondRow .formBtns {
+  width: 126px;
+  height: 100%;
+  background-color: grey;
+  border: none;
+  background-color: #ffa600;
+  border-radius: 8px;
+  font-family: "Inter Tight", serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #ff8800;
+    transform: translateY(-1px);
+    box-shadow: 4px 22px 24px -4px #423b3033;
+  }
+}
+
+#studentForm .secondRow .clearForm {
+  background-color: rgb(219, 219, 219);
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(204, 204, 204);
+  }
+}
+
+#studentForm .inputWrap {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+#studentForm .input {
+  background-color: #dbdbdb;
+  height: 42px;
+  width: auto;
+  border-radius: 8px;
+  border: 1px solid #cecece;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#studentForm .input:focus {
+  outline: #575ee9;
+  border: 1px solid #575ee9;
+}
+
+#studentForm .inputWrap .label {
+  /* color: red; */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dataTable {
+  /* background-color: red; */
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.dataTable .tableTitle {
+  height: auto;
+  width: 100%;
+  color: #1c1c1c;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px 8px 0px 0px;
+
+  .searchContainer {
+    /* background-color: red; */
+    position: relative;
+    width: 300px;
+
+    .searchIcon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  }
+
+  input {
+    background-color: #dbdbdb;
+    height: 42px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cecece;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    &:focus {
+      border: 1px solid #575ee9;
+      outline: none;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #1c1c1c;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(odd) {
+  background-color: #ebebeb;
+}
+
+tr:hover {
+  background-color: #e7e7e7;
+}
