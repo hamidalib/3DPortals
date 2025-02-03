@@ -5,11 +5,15 @@ const multer = require("multer");
 const csv = require("csv-parser");
 const xlsx = require("xlsx");
 const fs = require("fs");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static("static"));
 
 // Multer configuration for file upload
 const upload = multer({ dest: "uploads/" });
@@ -33,6 +37,14 @@ const studentSchema = new mongoose.Schema({
 });
 
 const Student = mongoose.model("Student", studentSchema, "students");
+
+// Add User Schema
+const userSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+});
+
+const User = mongoose.model("User", userSchema);
 
 // Routes
 app.get("/api/students", async (req, res) => {
@@ -148,6 +160,66 @@ app.post("/api/students/upload", upload.single("file"), async (req, res) => {
     if (req.file) {
       fs.unlinkSync(req.file.path);
     }
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Login route
+app.post("/api/auth/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    console.log("Login attempt:", email); // Debug log
+
+    const user = await User.findOne({ email });
+    console.log("User found:", user ? "yes" : "no"); // Debug log
+
+    if (!user) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    console.log("Password match:", isMatch); // Debug log
+
+    if (!isMatch) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const token = jwt.sign({ userId: user._id }, "your-secret-key", {
+      expiresIn: "24h",
+    });
+
+    res.json({ token });
+  } catch (error) {
+    console.error("Login error:", error); // Debug log
+    res.status(500).json({ message: error.message });
+  }
+});
+
+// Setup route to create test user
+app.get("/api/setup", async (req, res) => {
+  try {
+    // Check if test user already exists
+    const existingUser = await User.findOne({ email: "test@example.com" });
+
+    if (existingUser) {
+      return res.json({ message: "Test user already exists" });
+    }
+
+    // Create hashed password
+    const hashedPassword = await bcrypt.hash("password123", 10);
+
+    // Create test user
+    const testUser = await User.create({
+      email: "test@example.com",
+      password: hashedPassword,
+    });
+
+    res.json({
+      message: "Test user created successfully",
+      user: testUser.email,
+    });
+  } catch (error) {
+    console.error("Setup error:", error); // Debug log
     res.status(500).json({ message: error.message });
   }
 });

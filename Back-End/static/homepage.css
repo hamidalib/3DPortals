@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", serif;
+  background-color: #0c111d;
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  background-color: #0c111d;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #1f242f;
+}
+
+.logo img {
+  width: 176px;
+}
+
+.moduleWrap {
+  margin-top: 30px;
+}
+
+.moduleWrap button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #cecfd2;
+  font-size: 16px;
+  font-family: "Inter", serif;
+}
+
+.moduleWrap button:hover {
+  background-color: #1f242f;
+}
+
+.moduleWrap button.active {
+  background-color: #864bd31e;
+  border: 1px solid #864bd3a6;
+  color: white;
+  font-weight: 500;
+}
+
+.size-6 {
+  width: 24px;
+  height: 24px;
+}
+
+.mainContent {
+  margin-left: 250px;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 20px;
+  font-family: "Inter", serif;
+}
+
+#studentDataModule {
+  h3 {
+    margin-bottom: 8px;
+  }
+}
+
+#studentForm {
+  background-color: #161b26;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.firstRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.inputWrap {
+  flex: 1;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #cecfd2;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333741;
+  border-radius: 6px;
+  background-color: #0c111d;
+  font-family: "Inter", serif;
+  font-size: 16px;
+  color: #fff;
+
+  &:focus {
+    outline: none;
+    border: none;
+    outline: 2px solid #b692f6;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    color: #85888e;
+  }
+}
+
+.secondRow {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.formBtns {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(75, 85, 101, 0);
+  /* border: 1px solid white; */
+  color: #94969c;
+  font-family: "Inter", serif;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.uploadBtn {
+  border-radius: 8px;
+  border: 1px solid #333741;
+  background: #161b26;
+  box-shadow: 0px 0px 0px 1px rgba(12, 17, 29, 0.18) inset,
+    0px -2px 0px 0px rgba(12, 17, 29, 0.05) inset,
+    0px 1px 2px 0px rgba(255, 255, 255, 0);
+}
+
+button[type="submit"] {
+  background-color: #7f56d9;
+  padding: 0px 32px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button[type="submit"]:hover {
+  background-color: #6941c6;
+}
+
+button[type="submit"]:hover::before {
+  left: 100%;
+}
+
+.dataTable {
+  background-color: #171a25;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.tableTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0c111d;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #333741;
+  transition: all 0.2s ease;
+}
+
+/* Add this new style for when the search input is focused */
+.searchContainer:focus-within {
+  outline: none;
+  border: none;
+  outline: 2px solid #b692f6;
+}
+
+.searchContainer input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 200px;
+  color: white;
+  font-size: 14px;
+
+  &::placeholder {
+    color: #85888e;
+    font-size: 14px;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #0d121b;
+  color: white;
+  text-align: left;
+  padding: 16px;
+}
+
+.serialStyling {
+  /* background-color: red; */
+  text-align: center;
+  width: 80px;
+}
+
+.cityStyling {
+  /* background-color: red; */
+  width: 240px;
+}
+
+.actionsStyling {
+  /* background-color: red; */
+  width: 160px;
+}
+
+td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #1f242f;
+}
+
+.deleteBtn {
+  background-color: #0c111d;
+  border: 1px solid #1f242f;
+  color: #94969c;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background-color: rgba(255, 59, 59, 0.1);
+  color: #ff3b3b;
+}
+
+.deleteBtn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.deleteBtn:hover svg {
+  transform: scale(1.1);
+}
+
+.no-data td {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Sign Out Button Styling */
+.signOutWrap button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #ff4b4b, #ff6b6b);
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(255, 75, 75, 0.2);
+}
+
+.signOutWrap button:hover {
+  background: linear-gradient(to right, #ff3b3b, #ff5b5b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+}
+
+.signOutWrap button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 75, 75, 0.2);
+}
+
+.signOutWrap button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.signOutWrap button:hover svg {
+  transform: translateX(3px);
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 16px 0;
+}
+
+.pageBtn {
+  padding: 8px 16px;
+  border: 1px solid #333741;
+  background: #161b26;
+  color: #cecfd2;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Inter", serif;
+  transition: all 0.2s ease;
+}
+
+.pageBtn:hover:not(:disabled) {
+  background: #1f242f;
+  color: white;
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 8px;
+}
+
+.pageNum {
+  padding: 8px 16px;
+  border: 1px solid #333741;
+  background: #161b26;
+  color: #cecfd2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageNum.active {
+  background: #7f56d9;
+  color: white;
+  border-color: #7f56d9;
+}
+
+.pageNum:hover:not(.active) {
+  background: #1f242f;
+  color: white;
+}

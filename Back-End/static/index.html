@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Student Management System</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div class="loginContainer">
+        <div class="loginBox">
+            <div class="logoWrap">
+                <img src="/assets/3dPortals.svg" alt="Logo">
+            </div>
+            <h2>Welcome back</h2>
+            <p class="subtitle">Please enter your details to sign in</p>
+
+            <form id="loginForm">
+                <div class="inputGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="inputGroup">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="formOptions">
+                    <label class="checkboxWrap">
+                        <input type="checkbox" id="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgotPassword">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="loginBtn">Sign in</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>

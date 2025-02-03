@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #0c111d;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginContainer {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.loginBox {
+    background-color: #161b26;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logoWrap {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.logoWrap img {
+    width: 180px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #94969c;
+    margin-bottom: 32px;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cecfd2;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #333741;
+    border-radius: 6px;
+    background-color: #0c111d;
+    color: white;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: none;
+    outline: 2px solid #b692f6;
+}
+
+input::placeholder {
+    color: #85888e;
+    font-size: 14px;
+}
+
+.formOptions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.checkboxWrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkboxWrap input {
+    cursor: pointer;
+}
+
+.checkboxWrap span {
+    color: #cecfd2;
+    font-size: 14px;
+}
+
+.forgotPassword {
+    color: #7f56d9;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+    color: #6941c6;
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #7f56d9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.loginBtn:hover {
+    background-color: #6941c6;
+}
+
+.loginBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.loginBtn:hover::before {
+    left: 100%;
+} 
