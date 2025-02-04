@@ -327,5 +327,5 @@ document.querySelector(".signOutWrap button").addEventListener("click", () => {
   sessionStorage.removeItem("token");
 
   // Redirect to login page
-  window.location.href = "index.htm";
+  window.location.href = "index.html";
 });
